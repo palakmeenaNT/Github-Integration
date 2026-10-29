@@ -1,0 +1,14 @@
+name: CI
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: Target environment
+        required: false
+        default: dev
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "env=${{ github.event.inputs.env }}"
+      - run: sleep 60
